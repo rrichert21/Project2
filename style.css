@@ -1,0 +1,20 @@
+body {
+font: 75% georgia, sans-serif;
+color: #555753
+background-color: #99FFCC;
+margin: 0;
+padding: 0;
+}
+
+.header
+{
+background: transparent url('http://3.bp.blogspot.com/-SboI5UL8fM8/Uop0yxU7jUI/AAAAAAAAV_Q/rzGgsKVCsJE/s1600/Ziggy%2BLove%2Bfree%2Bpattern%2Bby%2BJean%2BKatherine%2BSmith%2Bfor%2Bwindhamfabrics.net.jpg');
+margin-top: 10px;
+width: 100%;
+height: 100px;
+}
+
+.center
+{
+align: center;
+}

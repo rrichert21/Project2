@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Create a Team</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+      $('#user-submit').click(function () {
+      var payload = {
+      Name: $('#name').val(),
+      CoachName: $('#coach-name').val(),
+      AgeGroup: $('#age').val(),
+      };
+
+      console.log(payload);
+      $.ajax({
+      url: "/createteam",
+      type: "POST",
+      contentType: "application/json",
+      processData: false,
+      data: JSON.stringify(payload),
+      complete: function (data) {
+      $('#output').html(data.responseText);
+      }
+      });
+
+      });
+      });
+ </script>
+  </head>
+  <body>
+    <div align="center" style="background-color:#000000;">
+      <div id="container" style="width:60%">
+        <div id="header" style="padding-top:10px; padding-bottom:20px; background-image: url('http://jolbyandfriends.com/media/project_images/pattern13_1.jpg.960x0_q100.jpg'); width:100%; height:100px;">
+ <h1 style="color:white;font-family:Arial Black, Gadget, sans-serif; text-align:center;font-size:55px;color:black; font-size:55px;">VolleyBuddy</h1>
+        </div>
+        <div id="nav" style="font-family:Arial Black, Gadget, sans-serif; background-color:white;border-style:solid; border-color:#FF9933; border-width:6px;height:40px;width:97%;padding-top:10px;">
+	  About
+          <b> | </b>
+          Add to the Database
+          <b> | </b>
+          Contact Us
+        </div>
+
+        <div id="content" style="background-color:white;height:600px; width:100%;float:left; text-size:20px;">
+          <p>
+<img src="http://bloximages.chicago2.vip.townnews.com/calaverasenterprise.com/content/tncms/assets/v3/editorial/3/a2/3a239e66-7985-11e3-92cf-0019bb2963f4/52cf2ff6800ee.preview-300.jpg" alt="team">
+<h3>Enter team information to the database:</h3>
+            Team name: <input id="name" type="text" /> <br />
+            Coach name: <input id="coach-name" type="text" /> <br />
+            Age Group:
+            <form method="GET">
+              <select id="age" name="teams">
+                <option value="12"> 12 </option>
+                <option value="13"> 13 </option>
+                <option value="14"> 14 </option>
+                <option value="15"> 15 </option>
+                <option value="16"> 16 </option>
+		<option value="17"> 17 </option>
+                <option value="18"> 18 </option>
+
+              </select>
+            </form>
+            <input type="submit" id="user-submit">
+          </p>
+          <p id="output"></p>
+
+        </div>
+        <div id="footer" style="background-image: url('http://jolbyandfriends.com/media/project_images/pattern13_1.jpg.960x0_q100.jpg');clear:both;text-align:center;">
+	  California Volleyball Association
+        </div>
+      </div>
+    </div>
+    
+ </body>
